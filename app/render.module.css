@@ -1,0 +1,206 @@
+.render {
+    display: flex;
+    /* justify-content: center; */
+     /* margin-left: 4rem; */
+     
+  }
+
+  .box img{
+    margin: 10px;
+  }
+  .current_playing_song{
+    width: 400px;
+    margin: 10px;
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+  .list{
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    height:53vh;
+    width: 400px;
+    position: relative;
+    overflow: scroll;
+    margin: 10px;
+    background-color: black;
+    color: red;
+    
+  }
+  .box{
+   
+    display: flex;
+    min-width:300px;
+    margin: 10px;
+  }
+.nextbox{
+  overflow: scroll;
+  height: 55vh;
+  width: 400px;
+    margin: 10px;
+    background-color: black;
+    /* color: aliceblue; */
+  color: azure;
+  background-color: rgb(0, 0, 0);
+}
+  .music_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    height: 400px;
+  border-radius: 20px;
+    width: 700px;
+    background-image: url("https://lh3.googleusercontent.com/FBzmUbR_buBx8r6ZKkB4zXrx08vktKQl_oXGxq4T72ggsCS3XniEvum784heg6ONb1DODfjgFUeLJFqe=w544-h544-l90-rj");
+  }
+  .loder {
+    display: flex;
+    min-width: 50vw;
+    margin-top: 100px;
+    justify-content: center;
+  }
+
+  .render_all{
+    margin: 0%;
+ 
+    min-height: 90vh;
+    min-width: 83.1vw;
+ 
+    box-shadow:  10px 10px 50px 10px black;
+    /* animation: render_all 10s  1s  infinite ease-in-out; */
+  }
+
+  
+
+
+  .slidebarforloader {  
+    overflow-y: scroll;
+    
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+ 
+  
+  }
+
+  .tab {
+ 
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+    /* display: flex;/ */
+    
+    width: 30vw;
+    height: 70vh;
+  
+  }
+  .tab li {
+    font-size: 1.2rem;
+    display: flex;
+ align-items: center;
+    list-style: none;
+
+  }
+  
+  .tab ul {
+
+    padding: 10px;
+    display: flex;
+
+    margin: 0%;
+  
+    border-bottom: 1px solid black;
+    /* margin: 10px; */
+    justify-content: space-evenly;
+    /* align-items: centers; */
+  }
+
+  .player-control {
+    position: absolute;
+  
+  /* left: 0.1rem; */
+    margin-bottom: width; 
+   
+    min-width: 100vw;
+    /* background-color: antiquewhite; */
+  }
+  
+  .controls-button {
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+   
+    padding: 0%;
+  
+    width: 200px;
+    height: 60px;
+  }
+  
+  .slidebar_music_control input {
+    color: aqua;
+    min-width: 100vw;
+  }
+  
+  .bottom_slidebar {
+    /* width: 100px; */
+    /* background-color: aqua; */
+    height: 10vh;
+  }
+  
+  .playlist button {
+    width: 190px;
+   
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border: none;
+    margin-top: rem;
+    border-radius: 20px;
+    background-color: rgb(176, 170, 161);
+    height: 50px;
+  }
+
+  .top {
+    overflow: hidden;
+    scale: 1;
+    margin-left: 10px;
+    display: flex;
+  }
+
+
+
+  .render_song_name {
+
+    margin: auto;
+    width: 600px;
+    height: 300px;
+  
+  }
+
+  .up_next_bar {
+    /* margin-right: 700px; */
+    margin-top: 30px;
+  
+
+    /* padding: 30px; */
+/* From https://css.glass */
+
+
+    /* border-radius: 10px; */
+
+  }

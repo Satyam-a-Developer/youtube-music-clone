@@ -1,27 +1,253 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ 
+ body  {
+
+  margin: 0%;
+  overflow: hidden;  
+  min-height: 90vh;
+  background-color: black;
+  display: flex;
+  box-sizing: border-box;
+  padding: 0%;
+
+} 
+
+
+/* ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+
+}
+li{
+cursor: pointer;
+
+  list-style: none ;
+  border-radius: 50%;
+  /* display: flex;  */
+  /* margin: 10px; */
+/* }  */
+
+.Image{
+
+  border-radius: 10px;
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+ 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+
+
+.active{
+  color: aqua;
+  background-color: azure;
+}
+header{
+  position: absolute;
+  width: 100vw;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.Link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aqua;
+
 }
+.slidebarforloader {  
+  overflow-y: hidden;
+  position: absolute;
+  display: flex;
+  z-index: -100;
+  flex-direction: row;
+  margin-top: 70px;
+
+}
+.tab {
+  /* display: flex;/ */
+  width: 300px;
+  margin: 0%;
+}
+.tab li {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  /* margin: 10px; */
+}
+
+.tab ul {
+  padding: 0%;
+  display: flex;
+  /* height:3rem; */
+  display: flex;
+  margin: 0%;
+
+  border-bottom: 1px solid black;
+  /* margin: 10px; */
+  justify-content: space-evenly;
+  /* align-items: centers; */
+}
+
+.render {
+  display: flex;
+  justify-content: center;
+}
+.music-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  height: 500px;
+
+  width: 500px;
+  background-image: url("https://lh3.googleusercontent.com/FBzmUbR_buBx8r6ZKkB4zXrx08vktKQl_oXGxq4T72ggsCS3XniEvum784heg6ONb1DODfjgFUeLJFqe=w544-h544-l90-rj");
+}
+
+.loder {
+  display: flex;
+  min-width: 50vw;
+  margin-top: 100px;
+  justify-content: center;
+}
+.up-next-bar {
+  display: flex;
+  margin: 30px;
+  margin-left: 5rem;
+  border-radius: 10px;
+  justify-content: flex-end;
+}
+
+.share-tools {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-evenly;
+  font-size: 40px;
+  width: 200px;
+  height: 100px;
+
+}
+.controls {
+  display: flex;
+  justify-content: center;
+}
+.slider::after{
+  content: "\A";
+  width: 13px;
+  position: absolute;
+  height: 13px;
+  border-radius: 50%;
+  background-color: black;
+  display: inline-block;
+}
+
+.slider{
+  background-color: rgb(255, 0, 0);
+  width: 1rem;
+  height: 0.4rem;
+}
+.icon:hover{
+  
+  background-color: rgba(120, 121, 120, 0.6);
+  border-radius: 20px;
+}
+
+.icon  {
+  padding-inline: 10px;
+
+  margin-left: 0.8rem;
+}
+
+
+
+
+hr {
+  margin: 0%;
+}
+.rout {
+  display: flex;
+  justify-content: center;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  
+
+}
+
+
+.render-song-name {
+
+  margin: auto;
+  width: 600px;
+  height: 300px;
+
+}
+.player-control {
+  position: fixed;
+
+left: 0.1rem;
+
+  margin-bottom: width; 
+  backdrop-filter: blur(10px);
+ 
+  min-width: 100vw;
+  background-color: rgba(174, 168, 161, 0.353);
+}
+
+.controls-button {
+  margin: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+ 
+  padding: 0%;
+
+  width: 200px;
+  height: 60px;
+}
+
+.slidebar-music-control input {
+  color: aqua;
+  min-width: 100vw;
+}
+
+.bottom-slidebar {
+  /* width: 100px; */
+  /* background-color: aqua; */
+  height: 10vh;
+}
+
+input::placeholder {
+  font-size: 15px;
+
+  color: rgb(0, 0, 0);
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 1000px;
+}
+input::placeholder {
+  font-size: 15px;
+
+  color: rgb(0, 0, 0);
+}
+.searchbar input {
+  font-size: 20px;
+  position: relative;
+  right: 1rem;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.427);
+  border-radius: 10px;
+  width: 500px;
+  height: 40px;
+} 

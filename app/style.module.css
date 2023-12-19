@@ -1,0 +1,9 @@
+
+.slidebarforloader {  
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    /* margin-left: 20rem; */
+  
+  }

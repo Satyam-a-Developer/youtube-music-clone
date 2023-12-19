@@ -1,0 +1,144 @@
+
+
+.slidebarforloader {  
+    
+ 
+height:90vh;
+    min-width: 100vw;
+    color: aliceblue;
+    overflow: scroll ;
+    margin-top: 62px;
+    /* margin: 100px; */
+}
+.btn{
+    display: flex;
+    justify-content: center;
+   /* min-width: 100vw; */
+}
+.btn button{
+    background-color:rgb(0, 208, 255);
+    font-size: 15px;
+   margin: auto;
+    padding: 10px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: none;
+    border-radius: 20px;
+   
+    margin-top:50px;
+    
+}
+.youtube_premium_page_header h2{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 50px;
+}
+.youtube_premium_page_header h3{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 50px;
+}
+.youtube_premium_page_header h4{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.youtube_premium_page_header{
+    
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100vw;
+    background-color: rgba(38, 35, 35, 0.781);
+}
+.download33{
+    width: 300px;
+    height: 300px;
+
+}
+.logo33{
+
+    width: 300px;
+    height: 300px;
+
+}
+.play33{
+    
+    width: 300px;
+    height: 300px;
+}
+.img h1{
+    position: absolute;
+    margin-right: 800px;
+}
+.img span{
+    position: absolute;
+    margin-top: 100px;
+    margin-right: 800px;
+
+}
+.girlimg h1{
+    position: absolute;
+    margin-left: 800px;
+}
+.girlimg span{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 800px;
+}
+.indiangirl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+.indiangirl span{
+    position: absolute;
+    margin-top: 100px;
+    margin-right: 800px;
+}
+.indiangirl h1{
+    position: absolute;
+    margin-right: 800px;
+
+}
+
+.girlimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+}
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+
+}
+.logo33{
+    /* background-color: aqua; */
+    width: 300px;
+    height: 300px;
+}
+.premiuminfo{
+   
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100vw;
+
+}

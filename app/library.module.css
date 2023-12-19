@@ -1,0 +1,28 @@
+.slidebarforloader {  
+    overflow-y: scroll;
+    display: flex;
+  
+    flex-direction: row;
+    margin-top: 70px;
+    color: aliceblue;
+    margin-left:5rem;
+  
+  
+  }
+ 
+.cards ul {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
+    width: 130vh;
+ 
+  }
+  
+.cards li {
+  margin: 20px;
+  list-style: none;
+  padding-bottom: 100px;
+}
+  
