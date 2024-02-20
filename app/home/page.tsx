@@ -39,7 +39,7 @@ export default function Page() {
       .then((response) => response.json())
       .then((data) => newks(data.message));
 
-    function newks(data) {
+    function newks(data:any) {
       setimage(data);
     }
   }, []);

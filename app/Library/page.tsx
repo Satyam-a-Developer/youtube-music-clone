@@ -13,7 +13,7 @@ export default function Page() {
     function funck(data: any) {
       console.log(data);
       setdata(data);
-      data.map((datak) => {
+      data.map((datak:any) => {
         console.log(datak);
       });
     }
