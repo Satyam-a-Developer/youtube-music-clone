@@ -49,7 +49,6 @@ export default function App() {
   if (typeof window === "undefined") {
     console.log("window is undefined");
   }
-  const width = window.innerHeight - 720 + "px";
 
   const Shuffle = <ShuffleIcon />;
   const Mloop = <Loop />;
