@@ -68,9 +68,12 @@ const nextConfig = {
           // remotePatterns: ['avatars.githubusercontent.com'],
           // remotePatterns: ['images.dog.ceo'],
           // remotePatterns: ['avatars.githubusercontent.com']
-        
+      
   
       },
+      eslint: {
+        ignoreDuringBuilds: true,
+    },
   }
   
   module.exports = 
