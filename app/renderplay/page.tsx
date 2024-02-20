@@ -1,15 +1,12 @@
 "use client";
 
 import styles from "../render.module.css";
-// import { Audio } from 'next/audio';
 import { useSearchParams } from "next/navigation";
-
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import Image from "next/image";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseRoundedIcon from "@mui/icons-material/PauseRounded";
-
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 // import nanchaku from "../../public/nuks.mp3";
 // import Holaamigo from "../../public/Hola amigo.mp3";
@@ -18,8 +15,6 @@ import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
 
 import { Loop, Pause } from "@material-ui/icons";
-import axios from "axios";
-import red from "../home.module.css";
 
 import React, { useEffect, useState, useRef } from "react";
 
@@ -39,8 +34,8 @@ export default function App() {
       .then((res) => res.json())
       .then((data) => setTodos(data));
   }, []);
-const  searchparam = useSearchParams();
-console.log(searchparam.get("name"))
+  const searchparam = useSearchParams();
+  console.log(searchparam.get("name"));
   const [todos, setTodos] = useState([]);
   const [width2, setwidth] = useState();
   const [icons, seticons] = useState(<PauseRoundedIcon />);
@@ -133,10 +128,10 @@ console.log(searchparam.get("name"))
     console.log(arr[ik]);
   };
   let playerobj = {
-    "jtrix": (
+    jtrix: (
       <iframe
-      width="660"
-      height="500"
+        width="660"
+        height="500"
         src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
         title="YouTube video player"
         frameborder="0"
@@ -144,7 +139,7 @@ console.log(searchparam.get("name"))
         allowfullscreen
       ></iframe>
     ),
-    "ojlucifer": (
+    ojlucifer: (
       <iframe
         width="660"
         height="500"
@@ -186,7 +181,6 @@ console.log(searchparam.get("name"))
         height="500"
         src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
         title="YouTube video player"
-        
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
@@ -272,9 +266,8 @@ console.log(searchparam.get("name"))
                             <div className={styles.render_song_data}>
                               <div className={styles.current_playing_song}>
                                 <div className={styles.name}>
-
                                   <span>playing from</span>
-                                  <br/>
+                                  <br />
                                   <span>Liked Music</span>
                                 </div>
 
@@ -305,11 +298,9 @@ console.log(searchparam.get("name"))
                               {Lyrics && (
                                 <div className={styles.list}>
                                   {todos.map((todo) => (
-                                 
-                                      <div key={todo.title}>
-                                        <span key={todo.title}>{todo.title}</span>
-                                      </div>
-                                  
+                                    <div key={todo.title}>
+                                      <span key={todo.title}>{todo.title}</span>
+                                    </div>
                                   ))}
                                   {/* <h5>{data1}</h5> */}
                                 </div>
@@ -322,7 +313,7 @@ console.log(searchparam.get("name"))
                     <footer>
                       <div
                         className="player-control"
-                        style={{ marginTop: width }}
+                        // style={{ marginTop: width }}
                       >
                         <div className="slider" style={{ width: width2 * 7 }}>
                           <div
@@ -346,6 +337,8 @@ console.log(searchparam.get("name"))
                           </div>
 
                           <div className="render-song-name">
+                            {/* {title} */}
+                            {/* // image of song playing */}
                             <h3>Nothing is playing</h3>
                           </div>
 

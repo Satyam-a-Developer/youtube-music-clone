@@ -1,73 +1,56 @@
-
- 
- body  {
-
+body {
   margin: 0%;
-  overflow: hidden;  
+  overflow: hidden;
   min-height: 90vh;
   background-color: black;
   display: flex;
   box-sizing: border-box;
   padding: 0%;
-
-} 
-
-
-/* ul{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  
-
 }
-li{
-cursor: pointer;
+.footer {
+  position: relative;
+}
 
-  list-style: none ;
-  border-radius: 50%;
-  /* display: flex;  */
-  /* margin: 10px; */
-/* }  */
+.player-control {
+  position: absolute;
+  bottom: 0%;
+  width: 100vw;
+  left: 0.1rem;
+  background: gray;
+}
 
-.Image{
 
+.Image {
   border-radius: 10px;
   margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
- 
 }
 
-
-
-.active{
+.active {
   color: aqua;
   background-color: azure;
 }
-header{
+header {
   position: absolute;
   width: 100vw;
 }
 
-
-.Link{
+.Link {
   display: flex;
   justify-content: center;
   align-items: center;
   color: aqua;
-
 }
-.slidebarforloader {  
+.slidebarforloader {
   overflow-y: hidden;
   position: absolute;
   display: flex;
   z-index: -100;
   flex-direction: row;
   margin-top: 70px;
-
 }
 .tab {
-  /* display: flex;/ */
   width: 300px;
   margin: 0%;
 }
@@ -76,20 +59,16 @@ header{
   display: flex;
   justify-content: center;
   list-style: none;
-  /* margin: 10px; */
 }
 
 .tab ul {
   padding: 0%;
   display: flex;
-  /* height:3rem; */
   display: flex;
   margin: 0%;
 
   border-bottom: 1px solid black;
-  /* margin: 10px; */
   justify-content: space-evenly;
-  /* align-items: centers; */
 }
 
 .render {
@@ -100,9 +79,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* min-height: 100vh; */
   height: 500px;
-
   width: 500px;
   background-image: url("https://lh3.googleusercontent.com/FBzmUbR_buBx8r6ZKkB4zXrx08vktKQl_oXGxq4T72ggsCS3XniEvum784heg6ONb1DODfjgFUeLJFqe=w544-h544-l90-rj");
 }
@@ -113,6 +90,7 @@ header{
   margin-top: 100px;
   justify-content: center;
 }
+
 .up-next-bar {
   display: flex;
   margin: 30px;
@@ -123,18 +101,18 @@ header{
 
 .share-tools {
   display: flex;
-  /* align-items: center; */
   justify-content: space-evenly;
   font-size: 40px;
   width: 200px;
   height: 100px;
-
 }
+
 .controls {
   display: flex;
   justify-content: center;
 }
-.slider::after{
+
+.slider::after {
   content: "\A";
   width: 13px;
   position: absolute;
@@ -144,25 +122,20 @@ header{
   display: inline-block;
 }
 
-.slider{
+.slider {
   background-color: rgb(255, 0, 0);
   width: 1rem;
   height: 0.4rem;
 }
-.icon:hover{
-  
+.icon:hover {
   background-color: rgba(120, 121, 120, 0.6);
   border-radius: 20px;
 }
 
-.icon  {
+.icon {
   padding-inline: 10px;
-
   margin-left: 0.8rem;
 }
-
-
-
 
 hr {
   margin: 0%;
@@ -172,32 +145,15 @@ hr {
   justify-content: center;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
   font-size: 1.3rem;
-  
-
 }
-
 
 .render-song-name {
-
   margin: auto;
   width: 600px;
-  height: 300px;
-
-}
-.player-control {
-  position: fixed;
-
-left: 0.1rem;
-
-  margin-bottom: width; 
-  backdrop-filter: blur(10px);
- 
-  min-width: 100vw;
-  background-color: rgba(174, 168, 161, 0.353);
 }
 
 .controls-button {
@@ -206,7 +162,7 @@ left: 0.1rem;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
- 
+
   padding: 0%;
 
   width: 200px;
@@ -226,7 +182,6 @@ left: 0.1rem;
 
 input::placeholder {
   font-size: 15px;
-
   color: rgb(0, 0, 0);
 }
 
@@ -238,7 +193,6 @@ input::placeholder {
 }
 input::placeholder {
   font-size: 15px;
-
   color: rgb(0, 0, 0);
 }
 .searchbar input {
@@ -250,4 +204,4 @@ input::placeholder {
   border-radius: 10px;
   width: 500px;
   height: 40px;
-} 
+}
