@@ -25,7 +25,7 @@ const Loading = () => <div>Loading...</div>;
 export default function App() {
   useEffect(() => {
     fetch(
-      "https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=50"
+      "https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=50",
     )
       .then((res) => res.json())
       .then((json) => setnextdata(json.photos));
@@ -78,21 +78,21 @@ export default function App() {
     }
   };
 
-  var music2 = document.querySelector("audio");
+  // var music2 = document.querySelector("audio");
 
-  if (music2) {
-    music2.ontimeupdate = function () {
-      myFunction();
-    };
+  // if (music2) {
+  //   music2.ontimeupdate = function () {
+  //     myFunction();
+  //   };
 
-    function myFunction() {
-      // Display the current position of the video in a p element with id="demo"
-      setwidth(music2.currentTime);
-    }
-  } else {
-    // music2 is null
-    console.log("music2 is null");
-  }
+  // function myFunction() {
+  //   // Display the current position of the video in a p element with id="demo"
+  //   setwidth(music2.currentTime);
+  // }
+  // } else {
+  // music2 is null
+  // console.log("music2 is null");
+  // }
 
   let m = Math.floor((width2 % 3600) / 60);
   let s = Math.floor((width2 % 3600) % 60);

@@ -19,6 +19,9 @@ body {
   background: gray;
 }
 
+iframe {
+  border-radius: 10px;
+}
 
 .Image {
   border-radius: 10px;
