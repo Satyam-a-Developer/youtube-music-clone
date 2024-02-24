@@ -1,6 +1,9 @@
 body {
   margin: 0%;
   overflow: hidden;
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
   min-height: 90vh;
   background-color: black;
   display: flex;
@@ -13,7 +16,6 @@ body {
 
 .player-control {
   position: absolute;
-  bottom: 0%;
   width: 100vw;
   left: 0.1rem;
   background: gray;
@@ -154,11 +156,17 @@ a {
   font-size: 1.3rem;
 }
 
-.render-song-name {
-  margin: auto;
-  width: 600px;
+.render-song-name img {
+  /* border-radius: 10px; */
+  margin: 10px;
 }
 
+.render-song-name {
+  display: flex;
+  margin: auto;
+  width: 600px;
+  height: 300px;
+}
 .controls-button {
   margin: 0%;
   display: flex;

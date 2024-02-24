@@ -25,7 +25,7 @@ const Loading = () => <div>Loading...</div>;
 export default function App() {
   useEffect(() => {
     fetch(
-      "https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=50",
+      "https://api.slingacademy.com/v1/sample-data/photos?offset=5&limit=50"
     )
       .then((res) => res.json())
       .then((json) => setnextdata(json.photos));
@@ -36,6 +36,12 @@ export default function App() {
   }, []);
   const searchparam = useSearchParams();
   console.log(searchparam.get("name"));
+  const [player, setplayer] = useState();
+  const [reverseobj, setreverseobj] = useState();
+  const [objimage, setobjimage] = useState();
+  const [reversecount, setreversecount] = useState(5);
+  const [count, setcount] = useState(0);
+  const [title, settitle] = useState(" ");
   const [todos, setTodos] = useState([]);
   const [width2, setwidth] = useState();
   const [icons, seticons] = useState(<PauseRoundedIcon />);
@@ -117,75 +123,180 @@ export default function App() {
   const handlePlayPause = () => {
     setIsPlaying(!isplaying);
   };
-  let ik = 0;
+
   const forwardobject = () => {
-    let arr = ["A", "B", "C", "D", "E", "F"];
-
+    let arr = [
+      "jtrix",
+      "ojlucifer",
+      "jtix-gamble",
+      "kalamink-streetflow",
+      "jtrix-iwish",
+      "A1&j1",
+    ];
+    let ik = 0;
+    let playerobj = {
+      jtrix: (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
+          img="https://i.ytimg.com/vi/KIKLQNWYE10/hqdefault.jpg"
+          title="jtrix"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      ojlucifer: (
+        <iframe
+          width="660"
+          height="500"
+          img="https://i.ytimg.com/vi/FYRdY-2U0gY/hqdefault.jpg"
+          src="https://www.youtube.com/embed/FYRdY-2U0gY?si=t4IMW4HOrbRFvqRU&amp;controls=0"
+          title="ojlucifer"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "jtix-gamble": (
+        <iframe
+          width="660"
+          height="500"
+          img="https://i.ytimg.com/vi/9rYwruJkT80/hqdefault.jpg"
+          src="https://www.youtube.com/embed/9rYwruJkT80?si=9J1ri7tnYodGrqzf&amp;controls=0"
+          title="jtix-gamble"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "kalamink-streetflow": (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/RI0y2YknikI?si=CKEOSEZy0wcIZKN7&amp;controls=0"
+          img="https://i.ytimg.com/vi/RI0y2YknikI/hqdefault.jpg"
+          title="kalamink-streetflow"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "jtrix-iwish": (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/RuKfKMxyezc?si=MhF8SGXOJsIQLQPF&amp;controls=0"
+          img="https://i.ytimg.com/vi/RuKfKMxyezc/hqdefault.jpg"
+          title="jtrix-iwish"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "A1&j1": (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
+          img="https://i.ytimg.com/vi/KIKLQNWYE10/hqdefault.jpg"
+          title="A1&j1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      ),
+    };
     ik++;
+    if (count < 5) {
+      setcount(count + 1); // Increment the count by 1
+    }
+    console.log(playerobj[arr[count]].props.src);
+    console.log(playerobj[arr[count]].props.title);
+    setplayer(playerobj[arr[count]].props.src);
+    settitle(playerobj[arr[count]].props.title);
+    // console.log(ik);
+    console.log(count);
+    setobjimage(playerobj[arr[count]].props.img);
+    // console.log(arr[ik]);
+  };
+  const backwordobject = () => {
+    let arr = [
+      "jtrix",
+      "ojlucifer",
+      "jtix-gamble",
+      "kalamink-streetflow",
+      "jtrix-iwish",
+      "A1&j1",
+    ];
+    let ik = 0;
+    let playerobj = {
+      jtrix: (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
+          img="https://i.ytimg.com/vi/KIKLQNWYE10/hqdefault.jpg"
+          title="jtrix"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      ojlucifer: (
+        <iframe
+          width="660"
+          height="500"
+          img="https://i.ytimg.com/vi/FYRdY-2U0gY/hqdefault.jpg"
+          src="https://www.youtube.com/embed/FYRdY-2U0gY?si=t4IMW4HOrbRFvqRU&amp;controls=0"
+          title="ojlucifer"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "jtix-gamble": (
+        <iframe
+          width="660"
+          height="500"
+          img="https://i.ytimg.com/vi/9rYwruJkT80/hqdefault.jpg"
+          src="https://www.youtube.com/embed/9rYwruJkT80?si=9J1ri7tnYodGrqzf&amp;controls=0"
+          title="jtix-gamble"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "kalamink-streetflow": (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/RI0y2YknikI?si=CKEOSEZy0wcIZKN7&amp;controls=0"
+          img="https://i.ytimg.com/vi/RI0y2YknikI/hqdefault.jpg"
+          title="kalamink-streetflow"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "jtrix-iwish": (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/RuKfKMxyezc?si=MhF8SGXOJsIQLQPF&amp;controls=0"
+          img="https://i.ytimg.com/vi/RuKfKMxyezc/hqdefault.jpg"
+          title="jtrix-iwish"
+          style={{ borderRadius: 20 }}
+        ></iframe>
+      ),
+      "A1&j1": (
+        <iframe
+          width="660"
+          height="500"
+          src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
+          img="https://i.ytimg.com/vi/KIKLQNWYE10/hqdefault.jpg"
+          title="A1&j1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      ),
+    };
+    ik++;
+    if (count > 0) {
+      setreversecount(reversecount - 1); // Increment the count by 1
+    }
+    console.log(playerobj[arr[reversecount]].props.src);
+    console.log(playerobj[arr[reversecount]].props.title);
+    setplayer(playerobj[arr[reversecount]].props.src);
+    settitle(playerobj[arr[reversecount]].props.title);
+    // console.log(ik);
+    console.log(reversecount);
+    // console.log(arr[ik]);
+    setobjimage(playerobj[arr[reversecount]].props.img);
+  };
 
-    console.log(ik);
-    console.log(arr[ik]);
-  };
-  let playerobj = {
-    jtrix: (
-      <iframe
-        width="660"
-        height="500"
-        src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    ),
-    ojlucifer: (
-      <iframe
-        width="660"
-        height="500"
-        src="https://www.youtube.com/embed/FYRdY-2U0gY?si=t4IMW4HOrbRFvqRU&amp;controls=0"
-        title="YouTube video player"
-        style={{ borderRadius: 20 }}
-      ></iframe>
-    ),
-    "jtix-gamble": (
-      <iframe
-        width="660"
-        height="500"
-        src="https://www.youtube.com/embed/9rYwruJkT80?si=9J1ri7tnYodGrqzf&amp;controls=0"
-        title="YouTube video player"
-        style={{ borderRadius: 20 }}
-      ></iframe>
-    ),
-    "kalamink-streetflow": (
-      <iframe
-        width="660"
-        height="500"
-        src="https://www.youtube.com/embed/RI0y2YknikI?si=CKEOSEZy0wcIZKN7&amp;controls=0"
-        title="YouTube video player"
-        style={{ borderRadius: 20 }}
-      ></iframe>
-    ),
-    "jtrix-iwish": (
-      <iframe
-        width="660"
-        height="500"
-        src="https://www.youtube.com/embed/RuKfKMxyezc?si=MhF8SGXOJsIQLQPF&amp;controls=0"
-        title="YouTube video player"
-        style={{ borderRadius: 20 }}
-      ></iframe>
-    ),
-    "A1&j1": (
-      <iframe
-        width="660"
-        height="500"
-        src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    ),
-  };
-  console.log(playerobj["jtrix"]);
   const imgSrc =
     "https://images.pexels.com/photos/18772233/pexels-photo-18772233/free-photo-of-boat-on-the-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
@@ -213,13 +324,11 @@ export default function App() {
                         <div className={styles.loder}>
                           <div className={styles.music_img}>
                             <iframe
-                              width="800"
-                              height="500"
-                              src="https://www.youtube.com/embed/KIKLQNWYE10?si=Edxfw5uDdkRm2p__&amp;controls=0"
+                              width="900"
+                              height="600"
+                              src={player}
                               title="YouTube video player"
-                              frameborder="0"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowfullscreen
                             ></iframe>
                           </div>
                         </div>
@@ -282,6 +391,9 @@ export default function App() {
                                         width={30}
                                         height={40}
                                       />
+                                      <p>{count}</p>
+                                      <p>{reversecount}</p>
+
                                       <p key={data.title}> {data.title}</p>
                                     </div>
                                   ))}
@@ -326,7 +438,9 @@ export default function App() {
                           {/* <audio ref={audioRef} src={Lover}></audio> */}
 
                           <div className="controls-button">
-                            <div className="forward">{Skipicon}</div>
+                            <div className="forward" onClick={backwordobject}>
+                              {Skipicon}
+                            </div>
                             <div className="pause" onClick={handlePlayPause}>
                               {icons}
                             </div>
@@ -338,7 +452,8 @@ export default function App() {
                           <div className="render-song-name">
                             {/* {title} */}
                             {/* // image of song playing */}
-                            <h3>Nothing is playing</h3>
+                            <img src={ objimage } alt="nothing playing" width={60} height={40} />
+                            <h3>{title} is playing</h3>
                           </div>
 
                           <h3>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState,useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import Image from "next/image";
@@ -9,7 +9,6 @@ import { Result } from "postcss";
 import ArrowForwardIosSharpIcon from "@material-ui/icons/ArrowForwardIosSharp";
 import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
 import Link from "next/link";
-
 
 export default function Page() {
   const arrow = <ArrowForwardIosSharpIcon />;
@@ -21,7 +20,6 @@ export default function Page() {
 
   useEffect(() => {
     const k = Math.floor((Math.random() * 100) / 10);
- 
 
     fetch("https://reqres.in/api/users" + k)
       .then((response) => response.json())
@@ -39,15 +37,15 @@ export default function Page() {
       .then((response) => response.json())
       .then((data) => newks(data.message));
 
-    function newks(data:any) {
+    function newks(data: any) {
       setimage(data);
     }
   }, []);
-  
+
   function nicek() {
     // let a = document.querySelector('.css')
     console.log("nice");
-    a.scrollight += 20
+    a.scrollight += 20;
   }
   const pathname = usePathname();
 
@@ -93,7 +91,7 @@ export default function Page() {
           </div>
 
           <div className={styles.scroll_btn}>
-            <button onClick={nicek} >{back}</button>
+            <button onClick={nicek}>{back}</button>
             <button>{arrow}</button>
           </div>
 
@@ -104,7 +102,7 @@ export default function Page() {
               href={{
                 pathname: "/renderplay",
                 query: {
-                  name: "dwdaw",
+                  name: "play",
                 },
               }}
             >
