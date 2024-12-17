@@ -24,7 +24,8 @@
     "react": "^18",
     "react-dom": "^18",
     "reploy": "^0.0.2",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@types/node": "^20",

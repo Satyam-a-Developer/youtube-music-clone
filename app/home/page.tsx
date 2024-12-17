@@ -1,112 +1,101 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import Image from "next/image";
 import styles from "../home.module.css";
-import { data } from "autoprefixer";
-import { Result } from "postcss";
 import ArrowForwardIosSharpIcon from "@material-ui/icons/ArrowForwardIosSharp";
 import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
 import Link from "next/link";
 
 export default function Page() {
-  const arrow = <ArrowForwardIosSharpIcon />;
-  const ref2 = React.createRef();
-  const back = <ArrowBackIosSharpIcon />;
-  const [data, setData] = useState(false);
-  const [name, setname] = useState();
-  const [image, setimage] = useState([]);
+  const [name, setName] = useState<string | undefined>("");
+  const [imageList, setImageList] = useState<string[]>([]);
+  const [todoTitle, setTodoTitle] = useState<string | undefined>("");
+  const pathname = usePathname();
 
+  // Fetching Data on Mount
   useEffect(() => {
-    const k = Math.floor((Math.random() * 100) / 10);
+    const randomNumber = Math.floor(Math.random() * 10); // Generates 0-9
 
-    fetch("https://reqres.in/api/users" + k)
+    // Fetch User Name
+    fetch(`https://reqres.in/api/users?page=2`)
       .then((response) => response.json())
-      .then((json) => setname(json.data[5].name));
+      .then((json) => {
+        if (json?.data?.length) {
+          setName(json.data[randomNumber]?.first_name || "Unknown");
+        }
+      })
+      .catch((err) => console.error("Error fetching user name:", err));
 
-    fetch("https://jsonplaceholder.typicode.com/todos/1" + k)
+    // Fetch Todo Title
+    fetch(`https://jsonplaceholder.typicode.com/todos/${randomNumber + 1}`)
       .then((response) => response.json())
-      .then((json) => setData(json));
+      .then((json) => setTodoTitle(json.title || "No title"))
+      .catch((err) => console.error("Error fetching todo:", err));
 
-    // fetch("https://api.thecatapi.com/v1/images/search?limit=10")
-    // .then((response) => response.json())
-    // .then((data) => console.log(data[1].url));
-
+    // Fetch Dog Images
     fetch("https://dog.ceo/api/breed/hound/images")
       .then((response) => response.json())
-      .then((data) => newks(data.message));
-
-    function newks(data: any) {
-      setimage(data);
-    }
+      .then((data) => setImageList(data.message.slice(0, 10))) // Limit to 10 images
+      .catch((err) => console.error("Error fetching images:", err));
   }, []);
-
-  function nicek() {
-    // let a = document.querySelector('.css')
-    console.log("nice");
-    a.scrollight += 20;
-  }
-  const pathname = usePathname();
 
   return (
     <main>
       <div className={styles.slidebarforloader_home}>
         <div className={styles.Home}>
+          {/* Buttons Section */}
           <div className={styles.btn_home}>
-            <button>Relax</button>
-            <button>Energize</button>
-            <button>Podcast</button>
-            <button>commute</button>
-            <button>Workout</button>
-            <button>Focus</button>
+            {["Relax", "Energize", "Podcast", "Commute", "Workout", "Focus"].map(
+              (label) => (
+                <button key={label}>{label}</button>
+              )
+            )}
           </div>
 
-          <h1>Mixed for u</h1>
+          <h1>Mixed for You</h1>
 
+          {/* Image List */}
           <div className={styles.css}>
             <div className={styles.lol}>
               <ul>
-                {image.map(
-                  (item: any, index) =>
-                    index <= 10 && (
-                      <>
-                        <span>
-                          <Image
-                            style={{ borderRadius: 100 }}
-                            src={item}
-                            alt={"dwadawd"}
-                            width="200"
-                            height="200"
-                            alt={"dwad"}
-                          />
-                          <h3>{name}</h3>
-                          {/* <span>{data.title}</span> */}
-                        </span>
-                      </>
-                    )
-                )}
+                {imageList.map((item, index) => (
+                  <li key={index} style={{ listStyleType: "none" }}>
+                    <span>
+                      <Image
+                        style={{ borderRadius: "50%" }}
+                        src={item}
+                        width={200}
+                        height={200}
+                        alt="Dog Image"
+                      />
+                      <h3>{name || "Loading..."}</h3>
+                      <p>{todoTitle || "Loading..."}</p>
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
+          {/* Scroll Buttons */}
           <div className={styles.scroll_btn}>
-            <button onClick={nicek}>{back}</button>
-            <button>{arrow}</button>
+            <button>{<ArrowBackIosSharpIcon />}</button>
+            <button>{<ArrowForwardIosSharpIcon />}</button>
           </div>
 
-          <h1>Recommended music videos</h1>
+          <h1>Recommended Music Videos</h1>
 
+          {/* Link Section */}
           <div className={styles.Recommendedvideo}>
             <Link
               href={{
                 pathname: "/renderplay",
-                query: {
-                  name: "play",
-                },
+                query: { name: "play" },
               }}
             >
-              hello
+              <h1>Hello</h1>
             </Link>
           </div>
         </div>

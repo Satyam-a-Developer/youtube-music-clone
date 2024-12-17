@@ -47,7 +47,7 @@ export default function Page() {
   function onSubmit() {
     console.log("dwda");
   }
-// const playlist = <playlist/>
+  // const playlist = <playlist/>
   // const pause = <Pause/>;
   // const Shuffle = <ShuffleIcon/>
   // const Mloop = <Loop/>
@@ -55,8 +55,8 @@ export default function Page() {
   // const skip = <SkipNextIcon/>
   // const Skipicon = <SkipPreviousIcon/>
   const fillhome = <HomeIconfill sx={{ fontSize: 30 }} />;
-  const close = <CloseIcon/>
-  const  ReorderIcon2  = <ReorderIcon sx={{ fontSize: 30 }} />
+  const close = <CloseIcon />
+  const ReorderIcon2 = <ReorderIcon sx={{ fontSize: 30 }} />
   const explorefill = <ExploreIconfill sx={{ fontSize: 30 }} />;
   const libraryfill = <LibraryMusicIconfill sx={{ fontSize: 30 }} />;
   const statusImage = <HomeIcon sx={{ fontSize: 30 }} />;
@@ -70,7 +70,7 @@ export default function Page() {
   const [icon, setIcon] = useState(false);
   const [closeicon, setcloseicon] = useState(false);
   const [library, setlibrary] = useState(false);
-  
+
   const [show, setShow] = useState(true);
 
   const toggleShow = () => {
@@ -81,7 +81,7 @@ export default function Page() {
   };
   const toggleIcon1 = () => {
 
-    if(pathname === "/home"){
+    if (pathname === "/home") {
       setIcon(icon);
     }
     // setIcon(icon);
@@ -94,29 +94,29 @@ export default function Page() {
     setexplore(!explore);
   };
 
-  const closeicon2 =() =>{
+  const closeicon2 = () => {
     setcloseicon(!closeicon)
   }
-const delete2 =() =>{
- 
-  setShow(false);
-} 
- return (
+  const delete2 = () => {
+
+    setShow(false);
+  }
+  return (
     <main >
       <header>
         <div className={styles.top}>
-          <div className="icon"  onClick={toggleShow}>
-          {/* <div className="icon" onClick={toggleShow}> */}
-           <br/>
-           <div onClick={closeicon2}>
-           {/* <div> */}
-           { closeicon ? close :ReorderIcon2 }
-           </div>
-           
+          <div className="icon" onClick={toggleShow}>
+            {/* <div className="icon" onClick={toggleShow}> */}
+            <br />
+            <div onClick={closeicon2}>
+              {/* <div> */}
+              {closeicon ? close : ReorderIcon2}
+            </div>
+
           </div>
           <div className={styles.logo} >
             <Image src={"https://music.youtube.com/img/on_platform_logo_dark.svg"} width={80} height={30} alt="" />
-         
+
           </div>
           <div className={styles.searchbar}>
             <form>
@@ -137,63 +137,59 @@ const delete2 =() =>{
         <hr></hr>
       </header>
       {/* style={{ display: show ? 'block' : 'none' }} */}
-      <div className={styles.slidebarforloader}   style={{ display: show ? 'block' : 'none' }} >
-      {show &&  <div className={styles.slidebar} >
+      <div className={styles.slidebarforloader} style={{ display: show ? 'block' : 'none' }} >
+        {show && <div className={styles.slidebar} >
           <div className={styles.top_slidebar}>
-          <Link href="/home">
-            <div className={styles.home} onClick={toggleIcon1}>
-            
-              {icon ? fillhome : statusImage}
-              <h3>
-              Home
+            <Link href="/home">
+              <div className={styles.home} onClick={toggleIcon1}>
 
-              </h3>
-            </div>
+                {icon ? fillhome : statusImage}
+                <h3>
+                  Home
+
+                </h3>
+              </div>
             </Link>
             <Link href="/explore">
-            <div className={styles.explore} onClick={exploreicon}>
-              {explore ? explorefill : explore1}
-              <h3>
-               Explore
-              </h3>
-            </div>
+              <div className={styles.explore} onClick={exploreicon}>
+                {explore ? explorefill : explore1}
+                <h3>
+                  Explore
+                </h3>
+              </div>
             </Link>
             <Link href="/Library">
-            <div className={styles.library} onClick={libraryicon}>
-              {library ? libraryfill : library1}
+              <div className={styles.library} onClick={libraryicon}>
+                {library ? libraryfill : library1}
 
-              <h3>
-                Library
-              
-              </h3>
-            </div>
+                <h3>
+                  Library
+
+                </h3>
+              </div>
             </Link>
-            <Link href="/upgrade">
-            <div className={styles.upgrade} onClick={delete2}>
-              
 
-           
-            <h3>
-
-           
-                 Upgrade
-            </h3>
-            </div>
-            </Link>
           </div>
 
           <hr />
 
           <div className={styles.bottom_slidebar}>
-          <p>Current pathname: {pathname}</p>
-          <Playlist/>
+            <Link href="/upgrade">
+              <div className={styles.upgrade} onClick={delete2}>
+                <h3>
+                  Upgrade
+                </h3>
+              </div>
+            </Link>
+            <p>Current pathname: {pathname}</p>
+            <Playlist />
             {/* <div className="User-liked">
               <span>Your likes</span>
 
               <p>{PushPinOutlined}Autoplaylist</p>
             </div> */}
             <div className={styles.create_new}>
-            <span>{}</span>
+              <span>{ }</span>
 
 
             </div>

@@ -117,16 +117,6 @@ header {
   justify-content: center;
 }
 
-.slider::after {
-  content: "\A";
-  width: 13px;
-  position: absolute;
-  height: 13px;
-  border-radius: 50%;
-  background-color: black;
-  display: inline-block;
-}
-
 .slider {
   background-color: rgb(255, 0, 0);
   width: 1rem;

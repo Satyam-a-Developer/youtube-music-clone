@@ -64,9 +64,10 @@
 }
 
 .render_all {
-  margin: 0%;
+  margin-top: 7%;
   min-height: 100vh;
   min-width: 83.1vw;
+
   box-shadow: 10px 10px 50px 10px black;
 }
 
